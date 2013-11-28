@@ -41,7 +41,7 @@ func doWithJsonResponse(request *http.Request, obj interface{}) error {
 }
 
 func ReadFile(filename string) (*OAuth, error) {
-	bytes, err := ioutil.ReadFile("oauth.json")
+	bytes, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}
