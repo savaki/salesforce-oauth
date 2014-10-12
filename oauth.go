@@ -86,8 +86,7 @@ func (self *OAuth) FetchToken(code string) (*Token, error) {
 	if err := doWithJsonResponse(request, token); err != nil {
 		log.Printf("unable to extract json content => %s", err.Error())
 		return nil, err
-	} else {
-		log.Printf("unable to extract json content => %#v", token)
-		return token, nil
 	}
+
+	return token, nil
 }
